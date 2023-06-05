@@ -1,9 +1,10 @@
 use serde::Deserialize;
+use std::error::Error;
 
 #[derive(Debug, Deserialize)]
 pub struct Book {
     #[serde(rename = "Book Id")]
-    pub id: String,
+    pub book_id: String,
     #[serde(rename = "Title")]
     pub title: String,
     #[serde(rename = "Author")]
@@ -54,6 +55,16 @@ pub struct Book {
 
 pub fn add(left: usize, right: usize) -> usize {
     left + right
+}
+
+pub fn books_from_csv(csv_data: &[u8]) -> Result<Vec<Book>, Box<dyn Error>> {
+    let mut books = Vec::new();
+    let mut rdr = csv::Reader::from_reader(csv_data);
+    for result in rdr.deserialize() {
+        let record: Book = result?;
+        books.push(record)
+    }
+    Ok(books)
 }
 
 #[cfg(test)]
