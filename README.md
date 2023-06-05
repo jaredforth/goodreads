@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/jaredforth/goodreads.svg?token=mH2pScYxqRkBEzpBQAu6&branch=master)](https://travis-ci.com/jaredforth/goodreads)
+[![Build Status](https://travis-ci.com/jaredforth/goodreads.svg?token=mH2pScYxqRkBEzpBQAu6&branch=main)](https://travis-ci.com/jaredforth/goodreads)
 [![Build status](https://ci.appveyor.com/api/projects/status/w75cp0q4qr0hngf8?svg=true)](https://ci.appveyor.com/project/jaredforth/goodreads)
 [![Crate](https://img.shields.io/crates/v/goodreads.svg)](https://crates.io/crates/goodreads)
 [![API](https://docs.rs/goodreads/badge.svg)](https://docs.rs/goodreads)
@@ -26,7 +26,7 @@ goodreads = "0.1"
 An example for converting a Goodreads CSV export into a a `Book` is in the
 `examples` directory. It can be run using 
 ```sh
-cargo run --release --example goodreads_to_rust < csv/goodreads_library_export.csv
+cargo run --example goodreads_to_rust
 ```
 
 ## License

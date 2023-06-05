@@ -1,6 +1,7 @@
 use serde::Deserialize;
 use std::error::Error;
 
+/// Rust representation of Goodreads book data
 #[derive(Debug, Deserialize)]
 pub struct Book {
     #[serde(rename = "Book Id")]
@@ -53,27 +54,24 @@ pub struct Book {
     pub owned_copies: String,
 }
 
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
-
-pub fn books_from_csv(csv_data: &[u8]) -> Result<Vec<Book>, Box<dyn Error>> {
+pub fn books_from_csv(csv_path: String) -> Result<Vec<Book>, Box<dyn Error>> {
     let mut books = Vec::new();
-    let mut rdr = csv::Reader::from_reader(csv_data);
+    let mut rdr = csv::Reader::from_path(csv_path)?;
     for result in rdr.deserialize() {
         let record: Book = result?;
-        books.push(record)
+        books.push(record);
     }
+    println!("{:?}", books);
     Ok(books)
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+//     #[test]
+//     fn it_works() {
+//         let result = add(2, 2);
+//         assert_eq!(result, 4);
+//     }
+// }

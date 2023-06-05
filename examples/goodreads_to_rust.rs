@@ -1,12 +1,10 @@
-use std::{error::Error, io, process};
-
-use goodreads::Book;
+use std::{error::Error, process};
 
 fn run() -> Result<(), Box<dyn Error>> {
-    let mut rdr = csv::Reader::from_reader(io::stdin());
-    for result in rdr.deserialize() {
-        let record: Book = result?;
-        println!("{:?}", record)
+    let csv_path = String::from("csv/goodreads_library_export.csv");
+    let books = goodreads::books_from_csv(csv_path);
+    for book in books? {
+        println!("{:?}", book)
     }
     Ok(())
 }
