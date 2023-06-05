@@ -6,7 +6,7 @@
 
 # goodreads
 
-A library for deserializing a Goodreads library export.
+A crate for deserializing a Goodreads library export. What you do with the data in the *tabula rasa* of your project is, of course, up to you.
 
 Documentation:
 -   [API Reference](https://docs.rs/goodreads)
