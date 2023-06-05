@@ -23,7 +23,7 @@ goodreads = "0.1"
 
 ## Examples
 
-An example for converting a Goodreads CSV export into a a `Book` is in the
+An example for converting a Goodreads CSV export into a `Book` is in the
 `examples` directory. It can be run using 
 ```sh
 cargo run --example goodreads_to_rust
