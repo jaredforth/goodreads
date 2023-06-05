@@ -55,12 +55,12 @@ pub struct Book {
 }
 
 /// Get a `Vec<Book>` from a path to a CSV
-/// 
+///
 /// ## Usage:
-/// 
+///
 /// ```
 ///  let books = goodreads::books_from_csv("csv/goodreads_library_export.csv".to_string());
-/// 
+///
 ///  assert!(books.is_ok());
 ///  assert_eq!(books.unwrap()[0].book_id, "25008661");
 /// ```
