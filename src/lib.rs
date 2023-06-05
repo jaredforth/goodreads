@@ -54,6 +54,16 @@ pub struct Book {
     pub owned_copies: String,
 }
 
+/// Get a `Vec<Book>` from a path to a CSV
+/// 
+/// ## Usage:
+/// 
+/// ```
+///  let books = goodreads::books_from_csv("csv/goodreads_library_export.csv".to_string());
+/// 
+///  assert!(books.is_ok());
+///  assert_eq!(books.unwrap()[0].book_id, "25008661");
+/// ```
 pub fn books_from_csv(csv_path: String) -> Result<Vec<Book>, Box<dyn Error>> {
     let mut books = Vec::new();
     let mut rdr = csv::Reader::from_path(csv_path)?;
@@ -64,14 +74,3 @@ pub fn books_from_csv(csv_path: String) -> Result<Vec<Book>, Box<dyn Error>> {
     println!("{:?}", books);
     Ok(books)
 }
-
-// #[cfg(test)]
-// mod tests {
-//     use super::*;
-
-//     #[test]
-//     fn it_works() {
-//         let result = add(2, 2);
-//         assert_eq!(result, 4);
-//     }
-// }
