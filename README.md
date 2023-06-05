@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.com/jaredforth/goodreads.svg?token=mH2pScYxqRkBEzpBQAu6&branch=main)](https://travis-ci.com/jaredforth/goodreads)
-[![Build status](https://ci.appveyor.com/api/projects/status/w75cp0q4qr0hngf8?svg=true)](https://ci.appveyor.com/project/jaredforth/goodreads)
+![Build Status](https://github.com/jaredforth/goodreads/actions/workflows/rust.yml/badge.svg)
 [![Crate](https://img.shields.io/crates/v/goodreads.svg)](https://crates.io/crates/goodreads)
 [![API](https://docs.rs/goodreads/badge.svg)](https://docs.rs/goodreads)
 ![Crates.io](https://img.shields.io/crates/d/goodreads)
