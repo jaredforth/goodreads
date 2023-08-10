@@ -49,9 +49,9 @@ pub struct Book {
     #[serde(rename = "Private Notes")]
     pub private_notes: String,
     #[serde(rename = "Read Count")]
-    pub read_count: String,
+    pub read_count: i8,
     #[serde(rename = "Owned Copies")]
-    pub owned_copies: String,
+    pub owned_copies: i8,
 }
 
 /// Get a `Vec<Book>` from a path to a CSV
